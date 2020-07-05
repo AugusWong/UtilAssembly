@@ -1,0 +1,12 @@
+﻿<doc>
+  <assembly>
+    <name>LinkedX.OrderService.Core</name>
+  </assembly>
+  <members>
+    <member name="T:LinkedX.OrderService.AliRobot=">
+      <summary>
+
+      </summary>
+    </member>
+  </members>
+</doc>

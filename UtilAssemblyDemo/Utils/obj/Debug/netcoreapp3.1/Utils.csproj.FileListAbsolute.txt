@@ -1,0 +1,7 @@
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\Utils\bin\Debug\netcoreapp3.1\Utils.deps.json
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\Utils\bin\Debug\netcoreapp3.1\Utils.dll
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\Utils\bin\Debug\netcoreapp3.1\Utils.pdb
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfoInputs.cache
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfo.cs
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\Utils\obj\Debug\netcoreapp3.1\Utils.dll
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\Utils\obj\Debug\netcoreapp3.1\Utils.pdb

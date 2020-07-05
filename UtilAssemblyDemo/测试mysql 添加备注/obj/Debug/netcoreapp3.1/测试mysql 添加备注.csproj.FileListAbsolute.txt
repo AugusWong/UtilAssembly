@@ -49,3 +49,4 @@ F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试mysql 添加备注\bin\Debug\net
 F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试mysql 添加备注\obj\Debug\netcoreapp3.1\测试mysql 添加备注.csproj.CopyComplete
 F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试mysql 添加备注\obj\Debug\netcoreapp3.1\测试mysql 添加备注.dll
 F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试mysql 添加备注\obj\Debug\netcoreapp3.1\测试mysql 添加备注.pdb
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试mysql 添加备注\obj\Debug\netcoreapp3.1\测试mysql 添加备注.csprojAssemblyReference.cache

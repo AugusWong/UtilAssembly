@@ -1,0 +1,14 @@
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\bin\Debug\netcoreapp3.1\测试.exe
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\bin\Debug\netcoreapp3.1\测试.deps.json
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\bin\Debug\netcoreapp3.1\测试.runtimeconfig.json
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\bin\Debug\netcoreapp3.1\测试.runtimeconfig.dev.json
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\bin\Debug\netcoreapp3.1\测试.dll
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\bin\Debug\netcoreapp3.1\测试.pdb
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\bin\Debug\netcoreapp3.1\Utils.dll
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\bin\Debug\netcoreapp3.1\Utils.pdb
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\obj\Debug\netcoreapp3.1\测试.csprojAssemblyReference.cache
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\obj\Debug\netcoreapp3.1\测试.AssemblyInfoInputs.cache
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\obj\Debug\netcoreapp3.1\测试.AssemblyInfo.cs
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\obj\Debug\netcoreapp3.1\测试.csproj.CopyComplete
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\obj\Debug\netcoreapp3.1\测试.dll
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\测试\obj\Debug\netcoreapp3.1\测试.pdb

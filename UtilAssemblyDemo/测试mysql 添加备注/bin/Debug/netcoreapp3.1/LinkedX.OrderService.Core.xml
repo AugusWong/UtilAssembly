@@ -901,6 +901,26 @@
             兑换现金券
             </summary>
         </member>
+        <member name="T:LinkedX.OrderService.Enums.BrokerageCalcTypeEnum">
+            <summary>
+            佣金计算模式
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.BrokerageCalcTypeEnum.Buyer">
+            <summary>
+            采购模式
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.BrokerageCalcTypeEnum.Brokerage">
+            <summary>
+            佣金模式
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.BrokerageCalcTypeEnum.Buyer_Brokerage">
+            <summary>
+            采购+佣金模式
+            </summary>
+        </member>
         <member name="T:LinkedX.OrderService.Enums.TransactionBillStatusEnum">
             <summary>
             对账状态
@@ -1460,6 +1480,11 @@
         <member name="P:LinkedX.OrderService.Orders.Order.AppointmentState">
             <summary>
             预约状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ChargeOrderId">
+            <summary>
+            收费单
             </summary>
         </member>
         <member name="P:LinkedX.OrderService.Orders.Order.CostPrice">
@@ -4299,17 +4324,17 @@
         </member>
         <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.AccountName">
             <summary>
-            账号名称
+            对公账户账号名称
             </summary>
         </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.Bank">
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.BankName">
             <summary>
-            开户银行
+            对公账户开户行
             </summary>
         </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.BankCardNo">
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.AccountCode">
             <summary>
-            银行卡账号
+            对公账户银行账号
             </summary>
         </member>
         <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.Channel">
@@ -4447,6 +4472,21 @@
             手机号码
             </summary>
         </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.AccountName">
+            <summary>
+            对公账户账号名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.BankName">
+            <summary>
+            对公账户开户行
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.AccountCode">
+            <summary>
+            对公账户银行账号
+            </summary>
+        </member>
         <member name="M:LinkedX.OrderService.TransactionBill.ITransactionBillManager.GetTransactionBillInfo(LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto)">
             <summary>
             查询对账单列表
@@ -4486,55 +4526,25 @@
             <param name="accountCode">对公账户银行账号</param>
             <returns></returns>
         </member>
-        <member name="T:LinkedX.OrderService.TransactionBill.SettleBill">
+        <member name="M:LinkedX.OrderService.TransactionBill.ITransactionBillManager.InitDefaultFapiaoInfoAsync">
             <summary>
-            结算单实体
+            初始化默认发票信息
             </summary>
+            <returns></returns>
         </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.SettleAmount">
-             <summary>
-            结算金额
-             </summary>
-        </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.SettleType">
+        <member name="M:LinkedX.OrderService.TransactionBill.ITransactionBillManager.GetBillAndPostInfoAsync(LinkedX.OpenSdk.AbpCommon.Security.Identity,System.String)">
             <summary>
-            结算方式（1-现金结算，2-兑换现金券 ）
+            获得发票和邮寄信息
             </summary>
+            <returns></returns>
         </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.AccountName">
+        <member name="M:LinkedX.OrderService.TransactionBill.ITransactionBillManager.PayTransactionBillAsync(System.String,System.String)">
             <summary>
-            对公账户账号名称
+            对账单付款
             </summary>
-        </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.BankName">
-            <summary>
-            对公账户开户行
-            </summary>
-        </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.AccountCode">
-            <summary>
-            对公账户银行账号
-            </summary>
-        </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.SettleTime">
-            <summary>
-            结算时间
-            </summary>
-        </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.SettleUserId">
-            <summary>
-            结算人
-            </summary>
-        </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.Status">
-            <summary>
-            结算状态
-            </summary>
-        </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.FapiaoAndPostInfo">
-            <summary>
-            发票和邮寄信息
-            </summary>
+            <param name="transactionBillCode"></param>
+            <param name="payCode"></param>
+            <returns></returns>
         </member>
         <member name="T:LinkedX.OrderService.TransactionBill.TransactionBill">
             <summary>
@@ -4573,7 +4583,12 @@
         </member>
         <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.SettlleType">
             <summary>
-            结算模式
+            结算方式 1-现金结算 2-兑换现金券
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.BrokerCalcType">
+            <summary>
+            佣金模式 1-采购模式 2-佣金模式 3-采购+佣金模式
             </summary>
         </member>
         <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.PayCode">
@@ -4591,11 +4606,6 @@
             账单类型 1-诊所 2-三方
             </summary>
         </member>
-        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.SettleBillId">
-            <summary>
-            结算单id
-            </summary>
-        </member>
         <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.Status">
              <summary>
             对账单状态 1-待核对 2-待结算 3-已结算 4-已作废 5-已核对
@@ -4609,6 +4619,36 @@
         <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.CheckTime">
             <summary>
             核对时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.AccountName">
+            <summary>
+            对公账户账号名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.BankName">
+            <summary>
+            对公账户开户行
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.AccountCode">
+            <summary>
+            对公账户银行账号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.SettleTime">
+            <summary>
+            结算时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.SettleUserId">
+            <summary>
+            结算人
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.FapiaoAndPostInfo">
+            <summary>
+            发票和邮寄信息
             </summary>
         </member>
         <member name="M:LinkedX.OrderService.TransactionBill.TransactionBill.ActiveStateMachine">
@@ -4632,6 +4672,18 @@
         <member name="M:LinkedX.OrderService.TransactionBill.TransactionBill.ShopCheckAsync">
             <summary>
             诊所核对对账单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBill.ShopApplySettledAsync">
+            <summary>
+            诊所申请结算
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBill.PaidAsync">
+            <summary>
+            结算单付款
             </summary>
             <returns></returns>
         </member>
@@ -4720,7 +4772,6 @@
             获取对账单列表
             </summary>
             <param name="request"></param>
-            <param name="count"></param>
             <returns></returns>
         </member>
         <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.TimingGenerateClinicTransactionBills">
@@ -4738,6 +4789,15 @@
             <inheritdoc />
         </member>
         <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.ApplySettleTransactionBillAsync(System.Collections.Generic.List{System.String},LinkedX.OrderService.Enums.SettleBillSettleTypeEnum,System.String,System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.InitDefaultFapiaoInfoAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.GetBillAndPostInfoAsync(LinkedX.OpenSdk.AbpCommon.Security.Identity,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.PayTransactionBillAsync(System.String,System.String)">
             <inheritdoc />
         </member>
         <member name="T:LinkedX.OrderService.Web.WebContentDirectoryFinder">
