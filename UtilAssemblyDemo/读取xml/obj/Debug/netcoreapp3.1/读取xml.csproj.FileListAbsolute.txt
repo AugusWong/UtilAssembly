@@ -1,0 +1,11 @@
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\bin\Debug\netcoreapp3.1\读取xml.exe
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\bin\Debug\netcoreapp3.1\读取xml.deps.json
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\bin\Debug\netcoreapp3.1\读取xml.runtimeconfig.json
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\bin\Debug\netcoreapp3.1\读取xml.runtimeconfig.dev.json
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\bin\Debug\netcoreapp3.1\读取xml.dll
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\bin\Debug\netcoreapp3.1\读取xml.pdb
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\obj\Debug\netcoreapp3.1\读取xml.AssemblyInfoInputs.cache
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\obj\Debug\netcoreapp3.1\读取xml.AssemblyInfo.cs
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\obj\Debug\netcoreapp3.1\读取xml.dll
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\obj\Debug\netcoreapp3.1\读取xml.pdb
+F:\DevSpace\UtilAssembly\UtilAssemblyDemo\读取xml\obj\Debug\netcoreapp3.1\读取xml.csprojAssemblyReference.cache

@@ -6,4 +6,17 @@
     <RootNamespace>测试mysql_添加备注</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="5.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LinkedX.OrderService.Core">
+      <HintPath>..\..\..\LinkedX.OrderService\src\LinkedX.OrderService.Core\bin\Debug\netcoreapp2.1\LinkedX.OrderService.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="LinkedX.OrderService.Utils">
+      <HintPath>..\..\..\LinkedX.OrderService\src\LinkedX.OrderService.Core\bin\Debug\netcoreapp2.1\LinkedX.OrderService.Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

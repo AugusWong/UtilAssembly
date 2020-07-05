@@ -1,0 +1,4750 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LinkedX.OrderService.Core</name>
+    </assembly>
+    <members>
+        <member name="T:LinkedX.OrderService.AliRobot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.AliRobot.Send(System.String)">
+            <summary>
+            阿里机器人
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.ChannelInfo">
+            <summary>
+            渠道数据
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfo.ProjectCode">
+            <summary>
+            项目编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfo.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfo.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfo.AuthUrl">
+            <summary>
+            授权信息Url
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfo.RegionType">
+            <summary>
+            产品范围
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfo.NeedAuditShop">
+            <summary>
+            是否需要三方审核诊所
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfo.NeedAuditItem">
+            <summary>
+            是否需要三方审核标品
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.ChannelRegionType">
+            <summary>
+            产品范围
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Channels.ChannelRegionType.OnlyShopCity">
+            <summary>
+            只展示客户城市的产品
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Channels.ChannelRegionType.AllCity">
+            <summary>
+            展示所有城市的产品
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Channels.ChannelRegionType.Other">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.ChannelManager">
+            <summary>
+            渠道业务管理
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.ChannelManager.SaveChannelInfo(LinkedX.OrderService.Channels.ChannelInfo)">
+            <summary>
+            保存渠道信息
+            若参数中指定Id,执行渠道信息修改，否则执行新增操作
+            </summary>
+            <param name="newChannelInfo">要保存的渠道信息</param>
+            <returns>保存后的渠道信息</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.ChannelManager.QueryChannelInfo(LinkedX.OrderService.Channels.QueryChannelInfoDto)">
+            <summary>
+            查询渠道信息
+            </summary>
+            <param name="queryChannelInfo">查询渠道信息请求参数</param>
+            <returns>渠道信息集合</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.ChannelManager.UploadChannelFile(System.String,System.String)">
+            <summary>
+            上传渠道文件
+            </summary>
+            <param name="fileName">文件名</param>
+            <param name="fileContent">文件内容</param>
+            <returns>上传成功后文件地址</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.ChannelManager.SaveStandardProduct(LinkedX.OrderService.Channels.SaveStandardProductDto)">
+            <summary>
+            保存商品信息
+            </summary>
+            <param name="saveStandardProductDto">保存商品请求参数</param>
+            <returns>返回成功保存后的商品信息</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.ChannelManager.GetChannelStandardProduct(System.String)">
+            <summary>
+            获取渠道商品
+            </summary>
+            <param name="channelCode">渠道编码</param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.ChannelInfoDto">
+            <summary>
+            渠道信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfoDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfoDto.ProjectCode">
+            <summary>
+            项目编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfoDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfoDto.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ChannelInfoDto.AuthUrl">
+            <summary>
+            授权信息Url
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.QueryChannelInfoDto">
+            <summary>
+            查询渠道参数信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.QueryChannelInfoDto.Ids">
+            <summary>
+            渠道编号
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.SaveStandardProductDto">
+            <summary>
+            保存商品参数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.SaveStandardProductDto.StandardProduct">
+            <summary>
+            商品信息
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.Dto.StandardProductCategoryDto">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.Dto.StandardProductCategoryDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.Dto.StandardProductCategoryDto.ChannelId">
+            <summary>
+            所属渠道编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.Dto.StandardProductCategoryDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.Dto.StandardProductCategoryDto.Maximum">
+            <summary>
+            最大数量
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.Dto.StandardProductCategoryDto.Minimum">
+            <summary>
+            最小数量
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.StandardProductChannelRuleDto">
+            <summary>
+            商品渠道规则
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRuleDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRuleDto.ChannelId">
+            <summary>
+            渠道编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRuleDto.Maximum">
+            <summary>
+            最大数量
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRuleDto.Minimum">
+            <summary>
+            最小数量
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.StandardProductDto">
+            <summary>
+            商品信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductDto.CategoryId">
+            <summary>
+            商品分类编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductDto.Image">
+            <summary>
+            商品图片
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductDto.ChannelRules">
+            <summary>
+            商品渠道规则
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductDto.Sizes">
+            <summary>
+            商品规格
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto">
+            <summary>
+            商品规格渠道规则
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.ProductId">
+            <summary>
+            商品编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.ProductSizeId">
+            <summary>
+            商品规格编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.ChannelId">
+            <summary>
+            渠道编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.SalePrice">
+            <summary>
+            销售价格
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.PurchasePrice">
+            <summary>
+            采购价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.ChannelProductCode">
+            <summary>
+            渠道商品编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.ChannelCode">
+            <summary>
+            渠道编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRuleDto.RecommendArea">
+            <summary>
+            推荐上线区域
+            （多个区域代码以'|'分割）
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.StandardProductSizeDto">
+            <summary>
+            商品规格
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeDto.Id">
+            <summary>
+            系统编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeDto.ProductId">
+            <summary>
+            所属商品编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeDto.Image">
+            <summary>
+            规格图片
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeDto.Name">
+            <summary>
+            规格名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeDto.Type">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeDto.FaceValue">
+            <summary>
+            券面值
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeDto.ConfigValue">
+            <summary>
+            商品配置(JSON)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeDto.ChannelRules">
+            <summary>
+            渠道规则
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.IChannelManager">
+            <summary>
+            业务接口
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.IChannelManager.SaveChannelInfo(LinkedX.OrderService.Channels.ChannelInfo)">
+            <summary>
+            保存渠道信息
+            若参数中指定Id,执行渠道信息修改，否则执行新增操作
+            </summary>
+            <param name="newChannelInfo">要保存的渠道信息</param>
+            <returns>保存后的渠道信息</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.IChannelManager.QueryChannelInfo(LinkedX.OrderService.Channels.QueryChannelInfoDto)">
+            <summary>
+            查询渠道信息
+            </summary>
+            <param name="queryChannelInfo">查询渠道信息请求参数</param>
+            <returns>渠道信息集合</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.IChannelManager.UploadChannelFile(System.String,System.String)">
+            <summary>
+            上传渠道文件
+            </summary>
+            <param name="fileName">文件名</param>
+            <param name="fileContent">文件内容</param>
+            <returns>上传成功后文件地址</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.IChannelManager.GetChannelStandardProduct(System.String)">
+            <summary>
+            获取渠道商品
+            </summary>
+            <param name="channelCode">渠道编码</param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.ProductItem">
+            <summary>
+            商品属性
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ProductItem.Name">
+            <summary>
+            项目名字
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ProductItem.Code">
+            <summary>
+            项目编码
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.StandardProduct">
+            <summary>
+            商品信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProduct.ProductCode">
+            <summary>
+            产品Code
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProduct.CategoryId">
+            <summary>
+            分类编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProduct.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProduct.Image">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProduct.ChannelCodes">
+            <summary>
+            绑定渠道编号
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.StandardProductCategory">
+            <summary>
+            商品类别
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductCategory.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.StandardProductChannelRule">
+            <summary>
+            商品项目渠道规则
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRule.ProductId">
+            <summary>
+            商品编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRule.ChannelId">
+            <summary>
+            渠道编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRule.ChannelCode">
+            <summary>
+            渠道编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRule.ProductItemId">
+            <summary>
+            产品项目编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRule.ProductItemCode">
+            <summary>
+            商品项目编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRule.Maximum">
+            <summary>
+            最大数量
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductChannelRule.Minimum">
+            <summary>
+            最小数量
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.StandardProductSize">
+            <summary>
+            商品规格
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSize.Code">
+            <summary>
+            内部领健编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSize.ProductId">
+            <summary>
+            所属商品编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSize.ProductItemId">
+            <summary>
+            项目属性编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSize.ProductItemCode">
+            <summary>
+            项目属性编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSize.Image">
+            <summary>
+            规格图片
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSize.Name">
+            <summary>
+            规格名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSize.Type">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSize.FaceValue">
+            <summary>
+            券面值
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSize.Equipments">
+            <summary>
+            设备配置
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Channels.StandardProductSize.SaveEquipments(System.Collections.Generic.List{LinkedX.OrderService.Channels.ProductSizeEquipment})">
+            <summary>
+            保存商品设备图片信息
+            </summary>
+            <param name="equipments">设备图片</param>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.ProductSizeEquipment">
+            <summary>
+            商品规格设备配置
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ProductSizeEquipment.EquipmentGroup">
+            <summary>
+            设备分组
+            引用ImageManager.ProductImageGroup
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.ProductSizeEquipment.Items">
+            <summary>
+            图片项目编码
+            引用 ImageManager.ImageItem
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Channels.StandardProductSizeChannelRule">
+            <summary>
+            商品规格渠道规则
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRule.ProductId">
+            <summary>
+            商品编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRule.ProductSizeId">
+            <summary>
+            商品规格编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRule.ChannelId">
+            <summary>
+            渠道编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRule.ChannelCode">
+            <summary>
+            渠道编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRule.SalePrice">
+            <summary>
+            销售价格
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRule.PurchasePrice">
+            <summary>
+            采购价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRule.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRule.ChannelProductCode">
+            <summary>
+            渠道商品编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Channels.StandardProductSizeChannelRule.RecommendArea">
+            <summary>
+            推荐上线区域
+            （多个区域代码以'|'分割）
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Core.Bms.BmsProxy.WorkOrderOpen(System.String,System.String,System.String)">
+            <summary>
+            诊所审核通过，开通
+            </summary>
+            <param name="workOrderId"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Core.Bms.BmsProxy.CustomerflowOpen(System.String)">
+            <summary>
+            公共请求方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Core.Bms.BmsProxy.GetCustomerInfo(System.String)">
+            <summary>
+            查询客户信息
+            </summary>
+            <param name="orgId"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Core.Bms.BmsProxy.SendMessage(System.String,System.String)">
+            <summary>
+            发送短信
+            </summary>
+            <param name="phoneNumber"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Core.Bms.BmsProxy.SetAuthToken(RestSharp.RestClient,RestSharp.RestRequest,System.String)">
+            <summary>
+            获取Token
+            </summary>
+            <param name="client"></param>
+            <param name="request"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.ClientProxy.HubMessage.HubMessageConnector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.ClientProxy.HubMessage.HubMessageConnector.PublishAppMessage(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            推送消息中心
+            </summary>
+            <param name="templateCode"></param>
+            <param name="shopId"></param>
+            <param name="mobile"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.ClientProxy.HubMessage.HubMessageConnector.Publish(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            推送消息中心
+            </summary>
+            <param name="templateCode"></param>
+            <param name="data"></param>
+        </member>
+        <member name="T:LinkedX.OrderService.ClientProxy.HubMessage.HubMessageProxy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.ClientProxy.HubMessage.HubMessageProxy.#ctor(LinkedX.OrderService.ClientProxy.HubMessage.HubMessageConfig,LinkedX.OpenSdk.Clients.ITokenManager)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="configuration"></param>
+            <param name="tokenManager"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.ClientProxy.HubMessage.HubMessageProxy.Publish(System.String,System.String,System.String,System.String,System.String,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            推送消息中心
+            </summary>
+            <param name="templateCode">模板code</param>
+            <param name="tenantId">租户ID</param>
+            <param name="officeId">诊所ID</param>
+            <param name="appUserId">app Id</param>
+            <param name="shopName">诊所名称</param>
+            <param name="total">创建时间是昨天的订单数量</param>
+            <param name="paidCount">创建时间是昨天的未确认订单</param>
+            <param name="completeCount">核销时间是昨天的订单</param>
+            <param name="confirmedCount">预约时间是昨天的已确认未核销订单</param>
+        </member>
+        <member name="M:LinkedX.OrderService.ClientProxy.HubMessage.HubMessageProxy.Publish(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            推送消息中心
+            </summary>
+            <param name="templateCode">模板code</param>
+            <param name="data">数据</param>
+        </member>
+        <member name="T:LinkedX.OrderService.ClientProxy.HubMessage.IHubMessageConnector">
+            <summary>
+            消息中心
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.ClientProxy.HubMessage.IHubMessageConnector.PublishAppMessage(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            推送消息中心
+            </summary>
+            <param name="templateCode"></param>
+            <param name="shopId"></param>
+            <param name="mobile"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.ClientProxy.HubMessage.IHubMessageConnector.Publish(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            推送消息中心
+            </summary>
+            <param name="templateCode">模板code</param>
+            <param name="data">数据</param>
+        </member>
+        <member name="T:LinkedX.OrderService.ClientProxy.HubMessage.IHubMessageProxy">
+            <summary>
+            消息中心接口
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.ClientProxy.HubMessage.IHubMessageProxy.Publish(System.String,System.String,System.String,System.String,System.String,System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            推送消息中心
+            </summary>
+            <param name="templateCode">模板code</param>
+            <param name="tenantId">租户ID</param>
+            <param name="officeId">诊所ID</param>
+            <param name="appUserId">app Id</param>
+            <param name="shopName">诊所名称</param>
+            <param name="total">创建时间是昨天的订单数量</param>
+            <param name="paidCount">创建时间是昨天的未确认订单</param>
+            <param name="completeCount">核销时间是昨天的订单</param>
+            <param name="confirmedCount">预约时间是昨天的已确认未核销订单</param>
+        </member>
+        <member name="M:LinkedX.OrderService.ClientProxy.HubMessage.IHubMessageProxy.Publish(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            推送消息中心
+            </summary>
+            <param name="templateCode">模板code</param>
+            <param name="data">数据</param>
+        </member>
+        <member name="T:LinkedX.OrderService.Configuration.AliyunOssConfig">
+            <summary>
+            aliyun文件上传配置类
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.DataLog.BaseDataLogEngine`1.originalData">
+            <summary>
+            原始数据
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.DataLog.BaseDataLogEngine`1.Logger">
+            <summary>
+            日志记录
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.DataLog.BaseDataLogEngine`1.AttachOriginalData(`0)">
+            <summary>
+            附加原始数据
+            </summary>
+            <param name="originalData">original data</param>
+        </member>
+        <member name="M:LinkedX.OrderService.DataLog.BaseDataLogEngine`1.WriteLog(System.String,System.Nullable{System.Int32},`0,System.Object,System.Boolean)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="logType">日志类型</param>
+            <param name="logTypeCode">日志类型编码</param>
+            <param name="targetData">最新数据</param>
+            <param name="validOriginalData">是否验证原始数据</param>
+        </member>
+        <member name="M:LinkedX.OrderService.DataLog.BaseDataLogEngine`1.ExecuteWriteLog(System.String,System.Nullable{System.Int32},`0,`0,System.Object)">
+            <summary>
+            执行日志记录
+            </summary>
+            <param name="logType">日志类型</param>
+            <param name="logTypeCode">日志类型编码</param>
+            <param name="originData">原始数据</param>
+            <param name="targetData">最新数据</param>
+            <param name="attachData">附加的数据</param>
+        </member>
+        <member name="T:LinkedX.OrderService.DataLog.IDataLog`1">
+            <summary>
+            数据日志
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.DataLog.IDataLog`1.AttachOriginalData(`0)">
+            <summary>
+            附加原始数据
+            </summary>
+            <param name="originalData">original data</param>
+        </member>
+        <member name="M:LinkedX.OrderService.DataLog.IDataLog`1.WriteLog(System.String,System.Nullable{System.Int32},`0,System.Object,System.Boolean)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="logType">日志类型</param>
+            <param name="logTypeCode">日志类型编码</param>
+            <param name="targetData">最新数据</param>
+            <param name="attachData">附加的数据</param>
+            <param name="validOriginalData">是否验证原始数据</param>
+        </member>
+        <member name="T:LinkedX.OrderService.DataLog.OrderLogEngine">
+            <summary>
+            订单数据日志记录
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.DataLog.OrderLogEngine.#ctor(LinkedX.OrderService.Orders.Order)">
+            <summary>
+            
+            </summary>
+            <param name="order"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.DataLog.OrderLogEngine.ExecuteWriteLog(System.String,System.Nullable{System.Int32},LinkedX.OrderService.Orders.Order,LinkedX.OrderService.Orders.Order,System.Object)">
+            <summary>
+            执行日志记录
+            </summary>
+            <param name="logType">日志类型</param>
+            <param name="logTypeCode">日志类型编码</param>
+            <param name="originData">原始数据</param>
+            <param name="targetData">最新数据</param>
+            <param name="attachData">附加的数据</param>
+        </member>
+        <member name="T:LinkedX.OrderService.EntityBase`1">
+            <summary>
+            实体基础对象
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.EntityBase`1.ExtensionData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.EntityBase`1.CreatorUserId">
+            <summary>
+            创建人Id
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.EntityBase`1.CreationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.EntityBase`1.LastModifierUserId">
+            <summary>
+            修改人Id
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.EntityBase`1.LastModificationTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.EntityBase`1.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.EntityBase`1.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.EntityBase`1.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Enums.ChannelSettleTypeEnum">
+            <summary>
+            渠道结算状态
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Enums.ClinicSettleTypeEnum">
+            <summary>
+            诊所结算状态
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Enums.SettleBillSettleTypeEnum">
+            <summary>
+            结算单结算方式
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.SettleBillSettleTypeEnum.InCash">
+            <summary>
+            现金结算
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.SettleBillSettleTypeEnum.CashCoupon">
+            <summary>
+            兑换现金券
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Enums.TransactionBillStatusEnum">
+            <summary>
+            对账状态
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillStatusEnum.ToCheck">
+            <summary>
+            待核对
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillStatusEnum.ToSettle">
+            <summary>
+            待结算
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillStatusEnum.Settled">
+            <summary>
+            已结算
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillStatusEnum.Abort">
+            <summary>
+            已作废
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillStatusEnum.Checked">
+            <summary>
+            已核对
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Enums.TransactionBillOpeation">
+            <summary>
+            对账操作
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillOpeation.ShopCheck">
+            <summary>
+            诊所核对
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillOpeation.ChannelCheck">
+            <summary>
+            三方核对
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillOpeation.ShopApplySettled">
+            <summary>
+            诊所申请结算
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillOpeation.Paid">
+            <summary>
+            付款
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillOpeation.Abort">
+            <summary>
+            作废
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Enums.TransactionBillTypeEnum">
+            <summary>
+            对账单类型枚举
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillTypeEnum.UnKnown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillTypeEnum.Clinic">
+            <summary>
+            诊所
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Enums.TransactionBillTypeEnum.Channel">
+            <summary>
+            三方
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.StandardProductType">
+            <summary>
+            标品类型
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.StandardProductType.Project">
+            <summary>
+            标品商品
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.StandardProductType.Ticket">
+            <summary>
+            标品券
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.CustomerSettlementTarget">
+            <summary>
+            客户结算目标类型
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.CustomerSettlementTarget.None">
+            <summary>
+            无结算类型
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.CustomerSettlementTarget.Cash">
+            <summary>
+            现金
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.CustomerSettlementTarget.MsgBalance">
+            <summary>
+            充值等额e看牙系统短信
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.CustomerSettlementTarget.MallTicket">
+            <summary>
+            结算金额兑换耗材商城无门槛使用券
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.CustomerInfoApplyStatus">
+            <summary>
+            流量大使客户资料申请单状态
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.CustomerInfoApplyStatus.Pending">
+            <summary>
+            待审核
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.CustomerInfoApplyStatus.AuditSuccessed">
+            <summary>
+            审核成功
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.CustomerInfoApplyStatus.AuditFailure">
+            <summary>
+            审核失败
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.His.IHisConnector.AddItems(System.String,System.String,System.Collections.Generic.List{LinkedX.OrderService.His.ItemBindingDto})">
+            <summary>
+            同步标品
+            </summary>
+            <param name="shopId"></param>
+            <param name="channel"></param>
+            <param name="items"></param>
+        </member>
+        <member name="P:LinkedX.OrderService.His.ItemBindingDto.CostPrice">
+            <summary>
+            采购价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.His.ItemBindingDto.SalePrice">
+            <summary>
+            销售价
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.His.SexType">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.His.SexType.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.His.SexType.Male">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.His.SexType.Female">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.His.ApptChannel">
+            <summary>
+            预约渠道
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.His.ApptInventoryApiResult`1.Code">
+            <summary>
+            200：成功；400：调用方错误；500：服务提供方错误
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.His.ApptInventoryApiResult`1.Msg">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.His.ApptInventoryApiResult`1.Body">
+            <summary>
+            具体内容
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.His.ApptInventoryCreateDto.Result">
+            <summary>
+            创建预约的结果
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.His.ApptInventoryCreateDto.ConfirmDueTime">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.ImagesManager">
+            <summary>
+            图片管理
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.ImagesManager.ImageType">
+            <summary>
+            图片类型
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageType.OrganizationShow">
+            <summary>
+            机构展示
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageType.Qualification">
+            <summary>
+            资质认证
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageType.Equipment">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.ImagesManager.ImageItem">
+            <summary>
+            图片选项
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.StoreLogo">
+            <summary>
+            门店Logo
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.StoreFace">
+            <summary>
+            门头照
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.Front">
+            <summary>
+            前台图
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.ConsultingRoom">
+            <summary>
+            诊室图
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.XRayRoom">
+            <summary>
+            拍片室
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.StorePrimary">
+            <summary>
+            门店主图
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.BusinessLicense">
+            <summary>
+            营业执照
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.MedicalPracticeLicense">
+            <summary>
+            医疗执业许可证
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.RadiologicalPermitLicense">
+            <summary>
+            放射诊疗许可证
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.MedicalCertificate">
+            <summary>
+            医生职业证书
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.Endoscope">
+            <summary>
+            内窥镜
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.SmallToothMachine">
+            <summary>
+            小牙片机
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.PanoramicMachine">
+            <summary>
+            全景机
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.CTMachine">
+            <summary>
+            CT机
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.PortCcanning">
+            <summary>
+            3D口扫
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.IteroPortCcanning">
+            <summary>
+            itero口扫
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.UltrasonicCleanToothMachine">
+            <summary>
+            超声波洁牙机
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ImageItem.SandBlastingGun">
+            <summary>
+            喷砂枪
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.ImagesManager.ProductImageGroup">
+            <summary>
+            商品图片分组（必选/可选）
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ProductImageGroup.Required">
+            <summary>
+            必选图片
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.ImagesManager.ProductImageGroup.Optional">
+            <summary>
+            可选图片
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.ImagesManager.GetImages(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取图片(自动拆分多张图片)
+            </summary>
+            <param name="allImages">所有图片</param>
+            <param name="imageCodes">要获取的图片编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.ImagesManager.GetImagesByType(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            根据图片分类获取图片
+            </summary>
+            <param name="allImages">所有图片</param>
+            <param name="imgTypeCode">图片分类</param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.Jobs.ClinicGenerateTransactionBillJob">
+            <summary>
+            诊所 定时生成对账单
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Jobs.JobBase.Logger">
+            <summary>
+            日志
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Jobs.JobBase.#ctor(System.Int32,System.Double,System.Int64)">
+            <summary>
+            JOB基类
+            </summary>
+            <param name="intervalTime">间隔执行时间</param>
+            <param name="hour">定时执行时间(9点则填写9.0)</param>
+            <param name="howlong">多久执行一次（默认每天执行）</param>
+        </member>
+        <member name="M:LinkedX.OrderService.Jobs.JobBase.Start">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Jobs.JobBase.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Jobs.JobConfig.IntervalTime">
+            <summary>
+            Job时间间隔
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Jobs.JobConfig.JdTokenIntervalTime">
+            <summary>
+            京东AccessToken刷新间隔
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Jobs.JobConfig.OrderReportTime">
+            <summary>
+            日报发布的时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Jobs.JobConfig.ClinicGenerateTransactionBillTime">
+            <summary>
+            诊所生成对账单时间
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Jobs.TopShelfJobRegisterService">
+            <summary>
+            注册Job服务(topshlef windows服务)
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Orders.IOrderManager.CheckAndUseAppointmentQuota(System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            校验并使用预约配额
+            </summary>
+            <param name="shopId">诊所ID</param>
+            <param name="channel">渠道</param>
+            <param name="itemId">标品ID</param>
+            <param name="quota">需要使用的配额</param>
+            <param name="isUse">是否使用额度</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Orders.IOrderManager.SendOrderReport">
+            <summary>
+            发送手机短信报表
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Orders.IOrderManager.QueryOrderReport(System.String,System.DateTime)">
+            <summary>
+            查询日报
+            </summary>
+            <param name="shopId"></param>
+            <param name="day"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ShopId">
+            <summary>
+            诊所CustomerId
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ShopName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ShopAddress">
+            <summary>
+            诊所地址
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ShopPhone">
+            <summary>
+            诊所电话
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.TenantId">
+            <summary>
+            租户ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ProductCode">
+            <summary>
+            产品CODE
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ItemId">
+            <summary>
+            标品ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.Channel">
+            <summary>
+            渠道Code
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ChannelOrderId">
+            <summary>
+            渠道订单ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ChannelItemId">
+            <summary>
+            渠道标品ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ChannelItemName">
+            <summary>
+            渠道标品名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.OrderAmount">
+            <summary>
+            销售金额
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.OrderState">
+            <summary>
+            订单状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ConfirmDueTime">
+            <summary>
+            确认截止时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.AppointmentId">
+            <summary>
+            预约ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ChannelAppointmentId">
+            <summary>
+            渠道预约ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.StartTime">
+            <summary>
+            预约时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.PatientMobile">
+            <summary>
+            患者手机号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.PatientIdType">
+            <summary>
+            患者类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.PatientIdCardNo">
+            <summary>
+            患者证件号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.PatientName">
+            <summary>
+            患者名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.PatientGender">
+            <summary>
+            患者性别
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.AppointmentComment">
+            <summary>
+            预约备注
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.AppointmentState">
+            <summary>
+            预约状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.CostPrice">
+            <summary>
+            采购价(与诊所结算价)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.SalePrice">
+            <summary>
+            销售价(支付宝标品是渠道方销售价格，其它渠道是渠道方结算价)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ItemCount">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ChannelUserName">
+            <summary>
+            渠道用户名称(C端用户)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ChannelUserId">
+            <summary>
+            渠道用户ID(C端用户)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.CompleteTime">
+            <summary>
+            核销时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.LcBrokerage">
+            <summary>
+            领健佣金
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.LcBrokeragePercent">
+            <summary>
+            领健佣金占比
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Order.ChannelBrokeragePercent">
+             <summary>
+            渠道佣金占比 
+             </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Orders.OrderLog">
+            <summary>
+            订单操作记录
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.OrderId">
+            <summary>
+            订单编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.ChangeType">
+            <summary>
+            变更类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.OrderChangeType">
+            <summary>
+            订单变更类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.FromStatus">
+            <summary>
+            订单修改前状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.TargetStatus">
+            <summary>
+            订单修改后状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.FromAppointmentStatus">
+            <summary>
+            预约修改前状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.TargetAppointmentStatus">
+            <summary>
+            预约修改后状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.FromAppointmentDate">
+            <summary>
+            修改前预约时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.TargetAppointmentDate">
+            <summary>
+            修改后预约时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.PatientMobile">
+             <summary>
+             手机号
+             </summary>
+            
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.PatientName">
+            <summary>
+            患者
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.CreateDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.ShopId">
+            <summary>
+            商家编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.ExtensionData">
+            <summary>
+            扩展数据
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.OrderLog.ActionSource">
+            <summary>
+            操作来源
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Orders.OrderLogType">
+            <summary>
+            订单日志状态
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Orders.OrderLogType.New">
+            <summary>
+            新建
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Orders.OrderLogType.AppointmentDateChanged">
+            <summary>
+            预约时间变更
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Orders.OrderLogType.StateChanged">
+            <summary>
+            状态变更
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Orders.OrderManager.CheckAndUseAppointmentQuota(System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            是否有预约配额
+            </summary>
+            <param name="shopId">诊所ID</param>
+            <param name="channel">渠道</param>
+            <param name="itemId">标品ID</param>
+            <param name="quota">需要使用的配额</param>
+            <param name="isUse">是否消费额度</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Orders.OrderManager.SendOrderReport">
+            <summary>
+            发送手机日报给诊所联系人
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Orders.OrderManager.QueryOrderReport(System.String,System.DateTime)">
+            <summary>
+            查询日报
+            </summary>
+            <param name="shopId"></param>
+            <param name="day"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.Orders.StockDayInfo">
+            <summary>
+            库存信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.StockDayInfo.Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.StockDayInfo.Available">
+            <summary>
+            是否有库存
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.StockDayInfo.StockDetails">
+            <summary>
+            具体时间段的库存信息
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Orders.StockInfo">
+            <summary>
+            具体时间段库存信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.StockInfo.StartTime">
+            <summary>
+            起始时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.StockInfo.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.StockInfo.Stock">
+            <summary>
+            库存
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Orders.Vo.OrderReportVo">
+            <summary>
+            昨日新增订单报表-实体
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.ShopId">
+            <summary>
+            诊所ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.ShopName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.Mobile">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.DayTotal">
+            <summary>
+            昨日新增总数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.DayPaidCount">
+            <summary>
+            昨日新增未确认总数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.DayCompleteCount">
+            <summary>
+            昨日新增已核销总数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.DayConfirmedCount">
+            <summary>
+            昨日未核销预约总数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.DayEffectiveCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.MonthTotal">
+            <summary>
+            本月核销预约总数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Orders.Vo.OrderReportVo.MonthCompleteCount">
+            <summary>
+            本月已核销预约总数
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.RequestLogs.IRequestLogManager.Add(System.String,LinkedX.OrderService.RequestLogs.RequestLogType,System.String,System.String,System.String,System.String)">
+            <summary>
+            添加日志
+            </summary>
+            <param name="objectId">对象ID</param>
+            <param name="requestType">请求类型</param>
+            <param name="operation"></param>
+            <param name="request"></param>
+            <param name="response"></param>
+        </member>
+        <member name="T:LinkedX.OrderService.RequestLogs.RequestLog">
+            <summary>
+            请求日志
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.RequestLogs.RequestLog.ObjectId">
+            <summary>
+            日志对象ID(OrderId/ChannelorderId/ShopId/ChannelShopId/ItemId/ChannelItemId)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.RequestLogs.RequestLog.ObjectType">
+            <summary>
+            日志对象ID(OrderId/ChannelorderId/ShopId/ChannelShopId/ItemId/ChannelItemId)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.RequestLogs.RequestLog.RequestLogType">
+            <summary>
+            日志类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.RequestLogs.RequestLog.Operation">
+            <summary>
+            操作
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.RequestLogs.RequestLog.Request">
+            <summary>
+            请求报文
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.RequestLogs.RequestLog.Response">
+            <summary>
+            响应报文
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.RequestLogs.RequestLog.CreationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.RequestLogs.RequestLog.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.RequestLogs.RequestLog.ExtensionData">
+            <summary>
+            扩展字段
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.RequestLogs.RequestLogType">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.RequestLogs.RequestLogType.ToOrderService">
+            <summary>
+            预约服务的请求报文日志类型
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.RequestLogs.RequestLogType.ToAlipayDb">
+            <summary>
+            支付宝的请求报文日志类型
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.RequestLogs.RequestLogType.Qimen">
+            <summary>
+            奇门接口
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.RequestLogs.RequestLogType.Shop">
+            <summary>
+            奇门接口
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.RequestLogs.ObjectType.Shop">
+            <summary>
+            门店
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.RequestLogs.ObjectType.Order">
+            <summary>
+            预约订单
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.RequestLogs.ObjectType.Item">
+            <summary>
+            标品
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.RequestLogs.RequestLogManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.RequestLogs.RequestLogManager.#ctor(Abp.Domain.Repositories.IRepository{LinkedX.OrderService.RequestLogs.RequestLog,System.Guid},Abp.Domain.Uow.IUnitOfWorkManager)">
+            <summary>
+            日志
+            </summary>
+            <param name="requestLogRepo"></param>
+            <param name="unitOfWorkManager"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.RequestLogs.RequestLogManager.Add(System.String,LinkedX.OrderService.RequestLogs.RequestLogType,System.String,System.String,System.String,System.String)">
+            <summary>
+            添加日志
+            </summary>
+            <param name="objectId">对象ID</param>
+            <param name="requestType">请求类型</param>
+            <param name="operation"></param>
+            <param name="request"></param>
+            <param name="response"></param>
+        </member>
+        <member name="T:LinkedX.OrderService.Settings.ImageOptions">
+            <summary>
+            图片配置选项
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.ImageOptions.Type">
+            <summary>
+            配置类型Code
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.ImageOptions.Name">
+            <summary>
+            配置名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.ImageOptions.Maximum">
+            <summary>
+            图片上传最大量
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.ImageOptions.Minimum">
+            <summary>
+            图片上传最小量
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Settings.IOptionsManager">
+            <summary>
+            配置接口
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Settings.IOptionsManager.GetOptions(System.String)">
+            <summary>
+            查询配置
+            </summary>
+            <param name="type">配置类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Settings.IOptionsManager.GetOptions(System.String,System.String)">
+            <summary>
+            查询配置
+            </summary>
+            <param name="type">配置类型</param>
+            <param name="key">配置key</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Settings.IOptionsManager.SetOptions(System.String,System.String,System.String,System.String)">
+            <summary>
+            设置配置
+            </summary>
+            <param name="type">配置类型</param>
+            <param name="key">配置key</param>
+            <param name="value">配置值</param>
+            <param name="name">配置名称</param>
+        </member>
+        <member name="T:LinkedX.OrderService.Settings.Options">
+            <summary>
+            配置选项
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Options.Type">
+            <summary>
+            配置类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Options.Key">
+            <summary>
+            配置项目键值/编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Options.Value">
+            <summary>
+            配置项值
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Options.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Settings.OptionsManager">
+            <summary>
+            配置管理器
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Settings.OptionsManager.#ctor(Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Settings.Options,System.Guid},Abp.Runtime.Caching.ICacheManager)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="optionsRepo"></param>
+            <param name="cacheManager"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Settings.OptionsManager.GetOptions(System.String)">
+            <summary>
+            查询配置
+            </summary>
+            <param name="type">配置类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Settings.OptionsManager.GetOptions(System.String,System.String)">
+            <summary>
+            查询配置
+            </summary>
+            <param name="type">配置类型</param>
+            <param name="key">配置key</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Settings.OptionsManager.SetOptions(System.String,System.String,System.String,System.String)">
+            <summary>
+            设置配置
+            </summary>
+            <param name="type">配置类型</param>
+            <param name="key">配置key</param>
+            <param name="value">配置值</param>
+            <param name="name">配置名称</param>
+        </member>
+        <member name="M:LinkedX.OrderService.Settings.OptionsManager.GetCache">
+            <summary>
+            获取cache
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.Settings.OptionType">
+            <summary>
+            配置的类型
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Settings.OptionType.JdQuotaItem">
+            <summary>
+            需要配额的标品
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.Type">
+            <summary>
+            配置类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.Channel">
+            <summary>
+            渠道
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.NightItemIds">
+            <summary>
+            分组对应的渠道产品ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.CreatorUserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.CreationTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.LastModifierUserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.LastModificationTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.DeleterUserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.DeletionTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Settings.Setting.ExtensionData">
+            <summary>
+            扩展字段
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Settings.SettingType">
+            <summary>
+            配置类型
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.Bind.impl.ShopBind.SyncChannelsToSaas(System.String)">
+            <summary>
+            通知SaaS,诊所的所有渠道
+            </summary>
+            <param name="shopId"></param>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Bind.IShopBind">
+            <summary>
+            店铺绑定解绑相关操作
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.Bind.IShopBind.Apply(System.String,System.String,System.String,System.String)">
+            <summary>
+            店铺申请上线
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.Bind.IShopBind.Bind(System.String,System.String,System.String,System.String)">
+            <summary>
+            店铺绑定上线
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.Bind.IShopBind.UnBind(System.String,System.String)">
+            <summary>
+            店铺直接解绑下线
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.Bind.IShopBind.Update(System.String,System.String)">
+            <summary>
+            店铺更新资料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.CustomerInfo">
+            <summary>
+            客户流量大使平台资料信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.ShopId">
+            <summary>
+            客户编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.ClinicName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.Address">
+            <summary>
+            诊所地址
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.Location">
+            <summary>
+            地址位置
+            坐标使用","分隔
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.City">
+            <summary>
+            所在城市编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.Introduction">
+            <summary>
+            简介
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.Phone">
+            <summary>
+            诊所电话
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.Traffic">
+            <summary>
+            交通线路
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.BusinessTime">
+            <summary>
+            营业时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.Images">
+            <summary>
+            图片资料
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.CustomerInfo.SaveImages(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            保存商品设备图片信息
+            </summary>
+            <param name="images">设备图片</param>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.PersonName">
+            <summary>
+            联系人姓名
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.Mobile">
+            <summary>
+            联系手机
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.Email">
+            <summary>
+            联系邮箱
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.SettlementType">
+            <summary>
+            结算类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.AccountName">
+            <summary>
+            账号名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.Bank">
+            <summary>
+            开户银行
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.BankCardNo">
+            <summary>
+            银行卡账号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.BusinessLicenseCode">
+            <summary>
+            营业执照编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.MedicalPracticeLicenseCode">
+            <summary>
+            医疗执业许可证名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.AreaProvinceName">
+            <summary>
+            省名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.AreaProvinceCode">
+            <summary>
+            省编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.AreaCityName">
+            <summary>
+            城市名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.AreaCityCode">
+            <summary>
+            城市编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.AreaDistrictName">
+            <summary>
+            区名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfo.AreaDistrictCode">
+            <summary>
+            区编码
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.CustomerInfoApply">
+            <summary>
+            客户资料申请
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.ShopId">
+            <summary>
+            客户编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.ClinicName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Address">
+            <summary>
+            诊所地址
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Location">
+            <summary>
+            地址位置
+            坐标使用","分隔
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.City">
+            <summary>
+            所在城市编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Introduction">
+            <summary>
+            简介
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Phone">
+            <summary>
+            诊所电话
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Traffic">
+            <summary>
+            交通线路
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.BusinessTime">
+            <summary>
+            营业时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Images">
+            <summary>
+            图片资料
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.PersonName">
+            <summary>
+            联系人姓名
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Mobile">
+            <summary>
+            联系手机
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Email">
+            <summary>
+            联系邮箱
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.SettlementType">
+            <summary>
+            结算类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.AccountName">
+            <summary>
+            账号名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Bank">
+            <summary>
+            开户银行
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.BankCardNo">
+            <summary>
+            银行卡账号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.BusinessLicenseCode">
+            <summary>
+            营业执照编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.MedicalPracticeLicenseCode">
+            <summary>
+            医疗执业许可证编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.Status">
+            <summary>
+            申请状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerInfoApply.AuditMessage">
+            <summary>
+            审核信息
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.CustomerManager.#ctor(Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.CustomerInfo,System.Guid},Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.ShopBinding},LinkedX.OrderService.Shops.IGoOnlineManager,LinkedX.OrderService.Shops.Bind.IShopBind,Abp.Domain.Uow.IUnitOfWorkManager)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="customerInfoRepository"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.CustomerManager.SaveCustomerInfo(LinkedX.OrderService.Shops.Dto.CustomerInfoDto)">
+            <summary>
+            保存客户资料
+            </summary>
+            <param name="customerInfoDto">客户资料</param>
+            <returns>返回成功保存后的客户资料信息</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.CustomerManager.GetCustomerInfo(System.String)">
+            <summary>
+            获取客户资料
+            </summary>
+            <param name="shopId">客户编号</param>
+            <returns></returns>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerOption.ShopId">
+            <summary>
+            诊所ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerOption.AutoConfirmOrder">
+            <summary>
+            自动确认订单
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerOption.AutoCompleteOrder">
+            <summary>
+            自动核销订单
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerOption.IsAllowBack">
+            <summary>
+            是否推送复诊信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerOption.IsNightClinic">
+            <summary>
+            是否夜诊所
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerOption.IsNoHiddenConsumption">
+            <summary>
+            无隐形消费
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerOption.NoHiddenConsumptionAgreeDate">
+            <summary>
+            无隐形消费签约日期
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.CustomerOption.NoHiddenConsumptionExpireDate">
+            <summary>
+            无隐形消费失效日期
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.BindItemDto">
+            <summary>
+            绑定客户标品参数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.BindItemDto.ShopId">
+            <summary>
+            客户编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.BindItemDto.ChannelCode">
+            <summary>
+            渠道编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.BindItemDto.Items">
+            <summary>
+            绑定项目
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.CloseShopChannelDto">
+            <summary>
+            关闭客户渠道参数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CloseShopChannelDto.ShopId">
+            <summary>
+            商家编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CloseShopChannelDto.ChannelCode">
+            <summary>
+            渠道编号
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.CloseShopChannelResultDto">
+            <summary>
+            关闭客户渠道结果
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CloseShopChannelResultDto.CloseSuccess">
+            <summary>
+            关闭成功
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CloseShopChannelResultDto.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.CustomerInfoDto">
+            <summary>
+            客户资料
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.ShopId">
+            <summary>
+            客户编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.ClinicName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Address">
+            <summary>
+            诊所地址
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Location">
+            <summary>
+            地址位置
+            坐标使用","分割
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.City">
+            <summary>
+            所在城市编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Introduction">
+            <summary>
+            简介
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Phone">
+            <summary>
+            诊所电话
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Traffic">
+            <summary>
+            交通线路
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.BusinessTime">
+            <summary>
+            营业时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Images">
+            <summary>
+            图片资料
+            key：图片对应code，value:图片地址（多张图片使用'|'分割）
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.PersonName">
+            <summary>
+            联系人姓名
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Mobile">
+            <summary>
+            联系手机
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Email">
+            <summary>
+            联系邮箱
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.SettlementType">
+            <summary>
+            结算类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.AccountName">
+            <summary>
+            账号名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.Bank">
+            <summary>
+            开户银行
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.BankCardNo">
+            <summary>
+            银行卡账号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.BusinessLicenseCode">
+            <summary>
+            营业执照编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.MedicalPracticeLicenseCode">
+            <summary>
+            医疗执业许可证名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.AreaProvinceName">
+            <summary>
+            省名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.AreaProvinceCode">
+            <summary>
+            省编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.AreaCityName">
+            <summary>
+            城市名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.AreaCityCode">
+            <summary>
+            城市编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.AreaDistrictName">
+            <summary>
+            区名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.CustomerInfoDto.AreaDistrictCode">
+            <summary>
+            区编码
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.GetGoOnlineApplyDetailDto">
+            <summary>
+            获取上线申请详情请求参数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GetGoOnlineApplyDetailDto.Id">
+            <summary>
+            上线申请编号
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.GetShopChannelDetailDto">
+            <summary>
+            获取商家客户参数信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GetShopChannelDetailDto.ShopId">
+            <summary>
+            商家编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GetShopChannelDetailDto.ChannelCode">
+            <summary>
+            渠道编码
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditFailDto">
+            <summary>
+            上线申请审核失败参数
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditFailDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditFailDto.AuditMessage">
+            <summary>
+            审核信息
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditResultDto">
+            <summary>
+            上线申请审核结果
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditResultDto.AuditMessage">
+            <summary>
+            审核信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditResultDto.Success">
+            <summary>
+            是否操作成功
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditSuccessDto">
+            <summary>
+            上线申请审核成功参数信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditSuccessDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto">
+            <summary>
+            上线申请信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.TenantId">
+            <summary>
+            saas租户ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.OfficeId">
+            <summary>
+            SaaS OfficeId
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.ShopId">
+            <summary>
+            诊所Id(账户中心ID)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.ShopName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.Status">
+            <summary>
+            申请状态(Init0,审核中，审核通过，审核不通过)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.ChannelId">
+            <summary>
+            渠道ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.ChannelCode">
+            <summary>
+            渠道编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.ChannelName">
+            <summary>
+            渠道名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.GoOnlineApplyDto.ApplyInfos">
+            <summary>
+            申请信息
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.ItemBindingDto">
+            <summary>
+            标品项绑定
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ItemBindingDto.ItemUniqueId">
+            <summary>
+            流量大使的标品Id
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ItemBindingDto.CostPrice">
+            <summary>
+            采购价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ItemBindingDto.SalePrice">
+            <summary>
+            销售价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ItemBindingDto.ItemType">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ItemBindingDto.CoupleAmount">
+            <summary>
+            卡券面值
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ItemBindingDto.IsNightClinic">
+            <summary>
+            是否也诊所标品
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ItemBindingDto.IsBinding">
+            <summary>
+            是否已经绑定
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.QueryGoOnlineApplyDto">
+            <summary>
+            查询上线
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.QueryGoOnlineApplyDto.ChannelIds">
+            <summary>
+            渠道编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.QueryGoOnlineApplyDto.ClinicIds">
+            <summary>
+            诊所编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.QueryGoOnlineApplyDto.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.QueryGoOnlineApplyDto.ShopKey">
+            <summary>
+            诊所关键字
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.QueryGoOnlineApplyDto.SkipCount">
+            <summary>
+            截取数据量
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.QueryGoOnlineApplyDto.MaxResultCount">
+            <summary>
+            单页数量
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.SetNightClinicDto">
+            <summary>
+            修改客户夜诊所状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.SetNightClinicDto.ShopId">
+            <summary>
+            客户编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.SetNightClinicDto.ChannelCode">
+            <summary>
+            渠道编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.SetNightClinicDto.NightClinic">
+            <summary>
+            是否为夜诊所
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.ShopBindingDto">
+            <summary>
+            诊所渠道绑定
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.ShopId">
+            <summary>
+            账户中心ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.Channel">
+            <summary>
+            渠道(支付宝标品:alipaybp、微医保:wesure)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.ChannelShopId">
+            <summary>
+            三方渠道诊所ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.ChannelShopName">
+            <summary>
+            三方渠道诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.Address">
+            <summary>
+            诊所地址
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.Phone">
+            <summary>
+            诊所手机号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.Status">
+            <summary>
+            状态(待开通，已开通未上线，已经上线，关闭)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.StartDate">
+            <summary>
+            开通时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.OnlineDate">
+            <summary>
+            上线时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.ExpireDate">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopBindingDto.IsNightClinic">
+            <summary>
+            是否夜诊所
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.Dto.ShopChannelDetailDto">
+            <summary>
+            诊所渠道详情
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopChannelDetailDto.ShopProducts">
+            <summary>
+            绑定标品项目
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopChannelDetailDto.ShopBinding">
+            <summary>
+            渠道绑定信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Dto.ShopChannelDetailDto.CustomerInfo">
+            <summary>
+            客户资料
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.GoOnlineApply">
+            <summary>
+            上线申请表
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.GoOnlineApply.TenantId">
+            <summary>
+            saas租户ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.GoOnlineApply.OfficeId">
+            <summary>
+            SaaS OfficeId
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.GoOnlineApply.ShopId">
+            <summary>
+            诊所Id(账户中心ID)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.GoOnlineApply.ShopName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.GoOnlineApply.Status">
+            <summary>
+            申请状态(Init0,审核中，审核通过，审核不通过)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.GoOnlineApply.ChannelId">
+            <summary>
+            渠道ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.GoOnlineApply.ChannelCode">
+            <summary>
+            渠道编码
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.GoOnlineApply.ApplyInfos">
+            <summary>
+            申请信息
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ApplyInfo">
+            <summary>
+            申请的信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ApplyInfo.Materials">
+            <summary>
+            进件资料
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ApplyInfo.BindItems">
+            <summary>
+            绑定标品
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ApplyInfo.UnBindItems">
+            <summary>
+            解绑标品
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Material.MinCount">
+            <summary>
+            最少
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Material.MaxCount">
+            <summary>
+            最多
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Material.MaterialGroupCode">
+            <summary>
+            资料类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Material.MaterialGroupName">
+            <summary>
+            资料类型名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.Material.MaterialImages">
+            <summary>
+            资料图片(Code,名称,Url)
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.MaterialImage">
+            <summary>
+            图片实体
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.MaterialImage.ImageCode">
+            <summary>
+            图片Code
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.MaterialImage.ImageName">
+            <summary>
+            图片名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.MaterialImage.ImageUrl">
+            <summary>
+            图片地址
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Shops.GoOnlineApplyStatus.Init">
+            <summary>
+            初始状态
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Shops.GoOnlineApplyStatus.ThirdAuditing">
+            <summary>
+            等待第三方什么
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Shops.GoOnlineApplyStatus.Success">
+            <summary>
+            审核成功
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Shops.GoOnlineApplyStatus.Fail">
+            <summary>
+            审核失败
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.GoOnlineManager.#ctor(Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.ShopBinding},Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.GoOnlineApply,System.Guid},Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.CustomerInfo,System.Guid},Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Channels.ChannelInfo,System.Guid},LinkedX.OrderService.Shops.IShopManager,LinkedX.OrderService.Shops.Bind.IShopBind)">
+            <summary>
+            
+            </summary>
+            <param name="shopMappingRepo"></param>
+            <param name="goOnlineApplyRepository"></param>
+            <param name="customerInfoRepository"></param>
+            <param name="channelInfoRepository"></param>
+            <param name="identityResolver"></param>
+            <param name="bmsProxy"></param>
+            <param name="productManager"></param>
+            <param name="shopManage"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.GoOnlineManager.QueryGoOnlineApply(LinkedX.OrderService.Shops.Dto.QueryGoOnlineApplyDto)">
+            <summary>
+            查询上线申请
+            </summary>
+            <param name="queryGoOnlineApplyDto">查询上线申请请求参数</param>
+            <returns>分页返回上线申请信息</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.GoOnlineManager.GetGoOnlineApplyDetail(LinkedX.OrderService.Shops.Dto.GetGoOnlineApplyDetailDto)">
+            <summary>
+            获取上线申请详情
+            </summary>
+            <param name="getGoOnlineApplyDetailDto">获取上线申请详情请求参数</param>
+            <returns>上线申请信息</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.GoOnlineManager.GoOnlineApplyAuditSuccess(LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditSuccessDto)">
+            <summary>
+            上线申请审核成功
+            1：三方绑定门店
+            2：三方解绑商品
+            3：三方绑定商品
+            4：保存门店资料信息
+            </summary>
+            <param name="goOnlineApplyAuditSuccessDto">上线申请审核请求参数</param>
+            <returns>上线申请审核结果</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.GoOnlineManager.GoOnlineApplyAuditFail(LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditFailDto)">
+            <summary>
+            上线申请审核失败
+            </summary>
+            <param name="goOnlineApplyAuditFailDto">上线申请审核请求参数</param>
+            <returns>上线申请审核结果</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ICustomerManager.SaveCustomerInfo(LinkedX.OrderService.Shops.Dto.CustomerInfoDto)">
+            <summary>
+            保存客户资料
+            </summary>
+            <param name="customerInfoDto">客户资料</param>
+            <returns>返回成功保存后的客户资料信息</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ICustomerManager.GetCustomerInfo(System.String)">
+            <summary>
+            获取客户资料
+            </summary>
+            <param name="shopId">客户编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IGoOnlineManager.QueryGoOnlineApply(LinkedX.OrderService.Shops.Dto.QueryGoOnlineApplyDto)">
+            <summary>
+            查询上线申请
+            </summary>
+            <param name="queryGoOnlineApplyDto">查询上线申请请求参数</param>
+            <returns>分页返回上线申请信息</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IGoOnlineManager.GetGoOnlineApplyDetail(LinkedX.OrderService.Shops.Dto.GetGoOnlineApplyDetailDto)">
+            <summary>
+            获取上线申请详情
+            </summary>
+            <param name="getGoOnlineApplyDetailDto">获取上线申请详情请求参数</param>
+            <returns>上线申请信息</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IGoOnlineManager.GoOnlineApplyAuditSuccess(LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditSuccessDto)">
+            <summary>
+            上线申请审核成功
+            1：三方绑定门店
+            2：三方解绑商品
+            3：三方绑定商品
+            4：保存门店资料信息
+            </summary>
+            <param name="goOnlineApplyAuditSuccessDto">上线申请审核请求参数</param>
+            <returns>上线申请审核结果</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IGoOnlineManager.GoOnlineApplyAuditFail(LinkedX.OrderService.Shops.Dto.GoOnlineApplyAuditFailDto)">
+            <summary>
+            上线申请审核失败
+            </summary>
+            <param name="goOnlineApplyAuditFailDto">上线申请审核请求参数</param>
+            <returns>上线申请审核结果</returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IProductManager.GetProductInfo(System.String)">
+            <summary>
+            查询渠道商品信息
+            </summary>
+            <param name="shopId"></param>
+            <param name="channel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IProductManager.GetShopProductInfo(System.String,System.String)">
+            <summary>
+            查询诊所的产品信息
+            </summary>
+            <param name="shopId"></param>
+            <param name="channel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.BindShopToChannel(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            绑定店铺和标品到渠道
+            </summary>
+            <param name="tenantId"></param>
+            <param name="shopId"></param>
+            <param name="channel"></param>
+            <param name="goOnlineApplyId"></param>
+            <param name="channelShopId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.NightShopApply(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            设置门店是否为夜诊所
+            </summary>
+            <param name="tenantId">公司ID</param>
+            <param name="shopId">门店ID</param>
+            <param name="channel">渠道</param>
+            <param name="isNightClinic">true:夜诊所，false：非夜诊所</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.QueryShopBinding(System.String)">
+            <summary>
+            获取诊所的渠道绑定
+            </summary>
+            <param name="shopId">诊所编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.CloseShopChannel(LinkedX.OrderService.Shops.Dto.CloseShopChannelDto)">
+            <summary>
+            关闭商家渠道
+            </summary>
+            <param name="closeShopChannelDto">关闭商家渠道参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.GetShopChannelDetail(LinkedX.OrderService.Shops.Dto.GetShopChannelDetailDto)">
+            <summary>
+            获取诊所渠道详情
+            </summary>
+            <param name="getShopChannelDetailDto">获取诊所渠道详情请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.BindItem(LinkedX.OrderService.Shops.Dto.BindItemDto)">
+            <summary>
+            绑定标品
+            </summary>
+            <param name="bindItemDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.UnBindItem(LinkedX.OrderService.Shops.Dto.BindItemDto)">
+            <summary>
+            解绑标品
+            </summary>
+            <param name="bindItemDto">解绑标品参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.BindItemToChannelPipe(System.Collections.Generic.List{LinkedX.OrderService.Shops.ItemBinding},System.String,System.String,System.Boolean)">
+            <summary>
+            批量绑定标品通道
+            </summary>
+            <param name="itemBindings"></param>
+            <param name="channel"></param>
+            <param name="shopId"></param>
+            <param name="needAuditItem"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:LinkedX.OrderService.Shops.IShopManager.ConfirmShopOnlineAsync(System.String,System.String)" -->
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.SyncBindItems(System.String,LinkedX.OrderService.Shops.ShopBinding)">
+            <summary>
+            将标品信息同步到各个渠道
+            </summary>
+            <param name="applyId">GoOnlineApply表ID</param>
+            <param name="shopBinding">店铺绑定信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.GetShopConfig(System.String,System.String)">
+            <summary>
+            查询诊所配额
+            </summary>
+            <param name="shopId">诊所ID</param>
+            <param name="channel">渠道code</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.SetBackOptions(System.String,System.Boolean)">
+            <summary>
+            开通回调
+            </summary>
+            <param name="shopId"></param>
+            <param name="channel"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.IShopManager.SetNoHiddenConsumption(System.String,System.String,System.Boolean,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            开通无隐形消费
+            </summary>
+            <param name="shopId"></param>
+            <param name="isNoHiddenConsumption"></param>
+            <param name="noHiddenConsumptionAgreeDate"></param>
+            <param name="noHiddenConsumptionExpireDate"></param>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ItemBinding">
+            <summary>
+            诊所绑定的标品表
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemBinding.CostPrice">
+            <summary>
+            采购价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemBinding.SalePrice">
+            <summary>
+            销售价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemBinding.ItemType">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemBinding.CoupleAmount">
+            <summary>
+            卡券面值
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemBinding.IsNightClinic">
+            <summary>
+            是否也诊所标品
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ItemBindingApply">
+            <summary>
+            标品绑定申请表
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ItemGroup">
+            <summary>
+            渠道产品分组
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemGroup.Channel">
+            <summary>
+            渠道名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemGroup.ItemGroupName">
+            <summary>
+            分组名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemGroup.MinCount">
+            <summary>
+            分组最小数默认最小为0
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemGroup.MaxCount">
+            <summary>
+            分组选择最大数,为NULL表示无限大
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemGroup.ChannelItemIds">
+            <summary>
+            分组对应的渠道产品ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ItemGroup.ExtensionData">
+            <summary>
+            扩展字段
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ProductManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ProductManager.#ctor(Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Channels.ChannelInfo,System.Guid},Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.ItemBinding},Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.ItemBindingApply},Abp.Dapper.Repositories.IDapperRepository{LinkedX.OrderService.Shops.ItemBinding},Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Settings.Options,System.Guid},Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.CustomerInfo,System.Guid},LinkedX.OrderService.His.IHisConnector,LinkedX.OrderService.Core.Bms.IBmsProxy)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ShopApply">
+            <summary>
+            阿里门店申请
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopApply.ShopId">
+            <summary>
+            门店ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopApply.ChannelShopId">
+            <summary>
+            渠道门店ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopApply.ChannelAuditId">
+            <summary>
+            渠道审核ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopApply.ChannelCheckStatus">
+            <summary>
+            渠道审核状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopApply.ExtensionData">
+            <summary>
+            应用市场提交的申请资料
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopApply.RequestId">
+            <summary>
+            请求ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopApply.GoOnlineId">
+            <summary>
+            上线申请编号
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ShopBinding">
+            <summary>
+            诊所渠道信息表
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.ShopId">
+            <summary>
+            账户中心ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.Channel">
+            <summary>
+            渠道(支付宝标品:alipaybp、微医保:wesure)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.ChannelShopId">
+            <summary>
+            三方渠道诊所ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.ChannelShopName">
+            <summary>
+            三方渠道诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.Address">
+            <summary>
+            诊所地址
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.Phone">
+            <summary>
+            诊所手机号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.Status">
+            <summary>
+            状态(待开通，已开通未上线，已经上线，关闭)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.StartDate">
+            <summary>
+            开通时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.OnlineDate">
+            <summary>
+            上线时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.OfflineDate">
+            <summary>
+            下线时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.ExpireDate">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.IsNightClinic">
+            <summary>
+            是否夜诊所
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBinding.Materials">
+            <summary>
+            诊所资料信息
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Shops.ShopBindingStatus.Init">
+            <summary>
+            初始
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Shops.ShopBindingStatus.WaiOnline">
+            <summary>
+            已开通待上线
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Shops.ShopBindingStatus.Online">
+            <summary>
+            已经上线
+            </summary>
+        </member>
+        <member name="F:LinkedX.OrderService.Shops.ShopBindingStatus.Close">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ShopConfig">
+            <summary>
+            门店预约配额配置表
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopConfig.ShopId">
+            <summary>
+            诊所ID
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopConfig.Channel">
+            <summary>
+            渠道
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopConfig.Quotas">
+            <summary>
+            配额
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopConfig.UseQuotas">
+            <summary>
+            已使用的配额
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopConfig.StartDate">
+            <summary>
+            有效开始时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopConfig.ExpireDate">
+            <summary>
+            有效结束时间
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ShopEvents.CloseShopEvent">
+            <summary>
+            关闭店铺事件
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.RiseReserveEvent.department">
+            <summary>
+            科室
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.RiseReserveEvent.doctorId">
+            <summary>
+            医生Id
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.RiseReserveEvent.doctorName">
+            <summary>
+            医生
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ShopApplyChannelEvent">
+            <summary>
+            诊所上线申请事件
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ShopBindChannelEvent">
+            <summary>
+            诊所绑定渠道事件
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBindChannelEvent.TenantId">
+            <summary>
+            商家编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBindChannelEvent.ShopId">
+            <summary>
+            诊所编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBindChannelEvent.ChannelShopId">
+            <summary>
+            渠道商家编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopBindChannelEvent.ShopInfos">
+            <summary>
+            商家资料
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.Shops.ShopUpdateChannelEvent">
+            <summary>
+            诊所更新渠道资料事件
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopUpdateChannelEvent.TenantId">
+            <summary>
+            商家编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopUpdateChannelEvent.ShopId">
+            <summary>
+            诊所编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopUpdateChannelEvent.ChannelShopId">
+            <summary>
+            渠道商家编号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.Shops.ShopUpdateChannelEvent.ShopInfos">
+            <summary>
+            商家资料
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.SycItemToSaas(System.String,System.String,LinkedX.OrderService.Shops.ItemBinding[])">
+            <summary>
+            通知Saas，诊所的所有标品
+            </summary>
+            <param name="shopId"></param>
+            <param name="channel"></param>
+            <param name="items"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.SyncBindItems(System.String,LinkedX.OrderService.Shops.ShopBinding)">
+            <summary>
+            通知自己,绑定上线申请单中的标品
+            </summary>
+            <param name="applyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.ConfirmShopOnlineAsync(System.String,System.String)">
+            <summary>
+            通知BMS,渠道上线并通知Bms流量大使订阅上线
+            </summary>
+            <param name="shopId">客户编号</param>
+            <param name="channel">渠道</param>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.QueryShopBinding(System.String)">
+            <summary>
+            获取诊所的渠道绑定
+            </summary>
+            <param name="shopId">诊所编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.CloseShopChannel(LinkedX.OrderService.Shops.Dto.CloseShopChannelDto)">
+            <summary>
+            关闭商家渠道
+            </summary>
+            <param name="closeShopChannelDto">关闭商家渠道参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.GetShopChannelDetail(LinkedX.OrderService.Shops.Dto.GetShopChannelDetailDto)">
+            <summary>
+            获取诊所渠道详情
+            </summary>
+            <param name="getShopChannelDetailDto">获取诊所渠道详情请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.NightShopApply(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            设置门店是否为夜诊所
+            </summary>
+            <param name="tenantId">公司ID</param>
+            <param name="shopId">门店ID</param>
+            <param name="channel">渠道</param>
+            <param name="isNightClinic">true:夜诊所，false：非夜诊所</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.SetBackOptions(System.String,System.Boolean)">
+            <summary>
+            开通回调
+            </summary>
+            <param name="shopId"></param>
+            <param name="isAllowBack"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.SetNoHiddenConsumption(System.String,System.String,System.Boolean,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            开通无隐形消费
+            </summary>
+            <param name="shopId"></param>
+            <param name="isNoHiddenConsumption"></param>
+            <param name="noHiddenConsumptionAgreeDate"></param>
+            <param name="noHiddenConsumptionExpireDate"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.GetShopConfig(System.String,System.String)">
+            <summary>
+            查询诊所的预约配置
+            </summary>
+            <param name="shopId">诊所ID</param>
+            <param name="channel">渠道code</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.BindItem(LinkedX.OrderService.Shops.Dto.BindItemDto)">
+            <summary>
+            绑定单个标品
+            </summary>
+            <param name="bindItemDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.BindItemToChannelPipe(System.Collections.Generic.List{LinkedX.OrderService.Shops.ItemBinding},System.String,System.String,System.Boolean)">
+            <summary>
+            批量绑定标品通道
+            </summary>
+            <param name="itemBindings"></param>
+            <param name="channel"></param>
+            <param name="shopId"></param>
+            <param name="needAuditItem"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.BindItemApplyToChannel(System.Collections.Generic.List{LinkedX.OrderService.Shops.ItemBinding},System.String,System.String,System.String)">
+            <summary>
+            申请绑定标品(需要三方审核)
+            </summary>
+            <param name="itemBindings"></param>
+            <param name="channel"></param>
+            <param name="shopId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.BindItemToChannel(System.String,System.String,System.Collections.Generic.List{LinkedX.OrderService.Shops.ItemBinding},System.String)">
+            <summary>
+            直接绑定标品(不需要三方审核)
+            </summary>
+            <param name="itemBindings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.UnBindItem(LinkedX.OrderService.Shops.Dto.BindItemDto)">
+            <summary>
+            解绑单个标品
+            </summary>
+            <param name="unBindItemDto">解绑标品参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.UnBindItemToChannel(System.Collections.Generic.List{LinkedX.OrderService.Shops.ItemBinding},System.String,System.String,System.String)">
+            <summary>
+            解绑
+            </summary>
+            <param name="itemBindings"></param>
+            <param name="channel"></param>
+            <param name="shopId"></param>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.GetItemType(System.String)">
+            <summary>
+            获取标品类型枚举
+            </summary>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.IsCouple(System.String)">
+            <summary>
+            判断是否为券
+            </summary>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.Shops.ShopManager.GetCustomerInfo(System.String)">
+            <summary>
+            获取客户资料
+            </summary>
+            <param name="shopId">客户编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCacheManager.Query(System.String,System.Guid,System.String,System.Int32)">
+            <summary>
+            查询缓存预约库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询的库存天数</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCacheManager.Add(System.String,System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            增库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCacheManager.Reduce(System.String,System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            减库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCacheManager.Modify(System.String,System.Guid,System.String,System.DateTime,System.DateTime,System.Int64)">
+            <summary>
+            改约
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="originTime">源预约时间</param>
+            <param name="nowTime">现预约时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCacheManager.SyncCache(System.String)">
+            <summary>
+            全量同步缓存库存
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.StockCache.AlipayStockCache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.AlipayStockCache.#ctor(LinkedX.OrderService.StockCache.BaseStockCache,Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.ItemBinding},Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.ShopBinding})">
+            <summary>
+            
+            </summary>
+            <param name="baseStockCache"></param>
+            <param name="itemBindingRepository"></param>
+            <param name="shopBindingRepository"></param>
+        </member>
+        <member name="P:LinkedX.OrderService.StockCache.AlipayStockCache.Channel">
+            <summary>
+            渠道
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.AlipayStockCache.Query(System.Guid,System.String,System.Int32)">
+            <summary>
+            查询缓存预约库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询的库存天数</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.AlipayStockCache.Add(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            增库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.AlipayStockCache.Reduce(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            减库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.AlipayStockCache.Modify(System.Guid,System.String,System.DateTime,System.DateTime,System.Int64)">
+            <summary>
+            改约
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="originTime">源预约时间</param>
+            <param name="nowTime">现预约时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.AlipayStockCache.SyncCache">
+            <summary>
+            全量同步缓存库存
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.AlipayStockCache.Filtered(System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Guid,System.String)">
+            <summary>
+            需要过滤逻辑
+            </summary>
+            <param name="cacheStocks"></param>
+            <param name="shopId"></param>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.StockCache.BaseStockCache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.BaseStockCache.#ctor(LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper)">
+            <summary>
+            
+            </summary>
+            <param name="stockCacheHelper"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.BaseStockCache.InitConfig(System.String,System.String,System.Int32)">
+            <summary>
+            初始化缓存配置
+            </summary>
+            <param name="channel"></param>
+            <param name="cacheName"></param>
+            <param name="queryDayNum"></param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.BaseStockCache.Query(System.Guid,System.String,System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Threading.Tasks.Task{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}}})">
+            <summary>
+            查询缓存预约库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询的库存天数</param>
+            <param name="func">回调函数</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.BaseStockCache.Add(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            增库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.BaseStockCache.Reduce(System.Guid,System.String,System.DateTime,System.Int64,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            减库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.BaseStockCache.Modify(System.Guid,System.String,System.DateTime,System.DateTime,System.Int64,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            改约
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="originTime">源预约时间</param>
+            <param name="nowTime">现预约时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.BaseStockCache.SyncCache(System.Guid,System.String,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            同步缓存库存
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.BaseStockCache.SyncAllCache(System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Guid,System.String,System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            全量同步缓存库存
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.StockCache.IStockCache">
+            <summary>
+            库存缓存DB(Redis)管理
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.StockCache.IStockCache.Channel">
+            <summary>
+            渠道
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCache.Query(System.Guid,System.String,System.Int32)">
+            <summary>
+            查询缓存预约库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询的库存天数</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCache.Add(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            增库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCache.Reduce(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            减库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCache.Modify(System.Guid,System.String,System.DateTime,System.DateTime,System.Int64)">
+            <summary>
+            改约
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="originTime">源预约时间</param>
+            <param name="nowTime">现预约时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.IStockCache.SyncCache">
+            <summary>
+            全量同步缓存库存
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.StockCache.StockCacheFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheFactory.Create(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="channel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper">
+            <summary>
+            CSRedis
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper._channel">
+            <summary>
+            支付宝标品渠道
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.#ctor(Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.ItemBinding},LinkedX.OrderService.His.IHisConnector,Castle.Core.Logging.ILogger)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.InitCacheManager(System.String,System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="channel">渠道</param>
+            <param name="cacheName">cache名称</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.Query(System.Guid,System.String,System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Threading.Tasks.Task{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}}})">
+            <summary>
+            查询缓存预约库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询的库存天数</param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.Add(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            增库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.Reduce(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            减库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.SyncCache(System.Guid,System.String,System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            单个同步缓存库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询的库存天数</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.SyncAllCache(System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Guid,System.String,System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            全量同步
+            </summary>
+            <param name="queryDayNum"></param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.GetAllKeys">
+            <summary>
+            获取全部的keys
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.GetSaasStock(System.Guid,System.String,System.Int32)">
+            <summary>
+            通过接口查询Saas库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询库存天数</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.GetStock(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            查询库存
+            </summary>
+            <param name="shopId"></param>
+            <param name="itemId"></param>
+            <param name="channel"></param>
+            <param name="dayNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.BuildStockCacheKey(System.Guid,System.String,System.String)">
+            <summary>
+            创建cache key
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="channel">渠道</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.CSRedisStockCacheHelper.AnalyzeStockCacheKey(System.String)">
+            <summary>
+            解析key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.StockCache.StockCacheImp.IStockCacheHelper">
+            <summary>
+            库存缓存
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.IStockCacheHelper.Query(System.Guid,System.String,System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Threading.Tasks.Task{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}}})">
+            <summary>
+            查询库存缓存
+            </summary>
+            <param name="shopId"></param>
+            <param name="itemId"></param>
+            <param name="queryDayNum"></param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.IStockCacheHelper.Add(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            添加库存
+            </summary>
+            <param name="shopId"></param>
+            <param name="itemId"></param>
+            <param name="nowTime"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.IStockCacheHelper.Reduce(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            减库存
+            </summary>
+            <param name="shopId"></param>
+            <param name="itemId"></param>
+            <param name="nowTime"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.IStockCacheHelper.SyncCache(System.Guid,System.String,System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            同步库存数据
+            </summary>
+            <param name="shopId"></param>
+            <param name="itemId"></param>
+            <param name="queryDayNum"></param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheImp.IStockCacheHelper.SyncAllCache(System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Guid,System.String,System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            全量同步
+            </summary>
+            <param name="queryDayNum"></param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.StockCache.StockCacheHelper">
+            <summary>
+            库存缓存DB(Redis)管理
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.StockCache.StockCacheHelper._channel">
+            <summary>
+            支付宝标品渠道
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.#ctor(Abp.Domain.Repositories.IRepository{LinkedX.OrderService.Shops.ItemBinding},LinkedX.OrderService.His.IHisConnector,Castle.Core.Logging.ILogger)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.InitCacheManager(System.String,System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="channel">渠道</param>
+            <param name="cacheName">cache名称</param>
+            <param name="queryDayNum">cache名称</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.Query(System.Guid,System.String,System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Threading.Tasks.Task{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}}})">
+            <summary>
+            查询缓存预约库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询的库存天数</param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.Add(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            增库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.Reduce(System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            减库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.SyncCache(System.Guid,System.String,System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            单个同步缓存库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询的库存天数</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.SyncAllCache(System.Int32,System.Func{System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo},System.Guid,System.String,System.Collections.Generic.List{LinkedX.OrderService.Orders.StockDayInfo}})">
+            <summary>
+            全量同步
+            </summary>
+            <param name="queryDayNum"></param>
+            <param name=""></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.GetAllKeys">
+            <summary>
+            获取全部的keys
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.GetSaasStock(System.Guid,System.String,System.Int32)">
+            <summary>
+            通过接口查询Saas库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询库存天数</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.GetStock(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="shopId"></param>
+            <param name="itemId"></param>
+            <param name="channel"></param>
+            <param name="dayNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.BuildStockCacheKey(System.Guid,System.String,System.String)">
+            <summary>
+            创建cache key
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="channel">渠道</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheHelper.AnalyzeStockCacheKey(System.String)">
+            <summary>
+            解析key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheManager.Query(System.String,System.Guid,System.String,System.Int32)">
+            <summary>
+            查询缓存预约库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="queryDayNum">查询的库存天数</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheManager.Add(System.String,System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            增库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheManager.Reduce(System.String,System.Guid,System.String,System.DateTime,System.Int64)">
+            <summary>
+            减库存
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="nowTime">预约开始时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheManager.Modify(System.String,System.Guid,System.String,System.DateTime,System.DateTime,System.Int64)">
+            <summary>
+            改约
+            </summary>
+            <param name="shopId">门店ID</param>
+            <param name="itemId">标品ID</param>
+            <param name="originTime">源预约时间</param>
+            <param name="nowTime">现预约时间</param>
+            <param name="count">预约数量</param>
+        </member>
+        <member name="M:LinkedX.OrderService.StockCache.StockCacheManager.SyncCache(System.String)">
+            <summary>
+            全量同步缓存库存
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.BillPeriod">
+            <summary>
+            账单周期 整数型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.BillPeriodStr">
+            <summary>
+            账单周期 字符型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.TransactionBillCode">
+            <summary>
+            对账单号
+            </summary>     
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.Brokerage">
+            <summary>
+            佣金
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.SettleType">
+             <summary>
+            结算方式  现金结算/兑换现金券
+             </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.SettleTypeStr">
+            <summary>
+            结算方式 中文描述
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.SettleAmount">
+            <summary>
+            结算金额（诊所端的应付金额）
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.PaidAmount">
+            <summary>
+            应付金额
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.PayCode">
+            <summary>
+            付款流水号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.TransactionBillStatus">
+            <summary>
+            对账状态 整数型（1-待核对2-待结算3-已结算4-已作废5-已核对）
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.TransactionBillStatusStr">
+            <summary>
+            对账状态 字符型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.ShopId">
+            <summary>
+            诊所id
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.ClinicName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.AccountName">
+            <summary>
+            账号名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.Bank">
+            <summary>
+            开户银行
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.BankCardNo">
+            <summary>
+            银行卡账号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.Channel">
+            <summary>
+            渠道code
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.ChannelName">
+            <summary>
+            渠道名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.SalePrice">
+            <summary>
+            平台销售价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.PurchasePrice">
+            <summary>
+            领健采购价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.UpdateTimeStr">
+            <summary>
+            更新时间字符型
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInfoDto.CreationTime">
+            <summary>
+            对账单创建时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.BillPeriod">
+            <summary>
+            账单周期
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.Status">
+            <summary>
+            对账单状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.ShopId">
+             <summary>
+            诊所id 
+             </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.Channel">
+            <summary>
+            渠道code
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.SearchValue">
+            <summary>
+            搜索文本框值
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.StartPeriod">
+            <summary>
+            开始周期
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.EndPeriod">
+            <summary>
+            结束周期
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.BillType">
+            <summary>
+            账单类型 1-诊所 2-三方
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.PageIndex">
+            <summary>
+            页数从0开始
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto.PageSize">
+            <summary>
+            页的大小 
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo">
+            <summary>
+            发票信息和邮寄信息
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.CorpName">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.TaxNum">
+            <summary>
+            税号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.CorpRegisterAddr">
+            <summary>
+            公司注册地址
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.CorpPhone">
+            <summary>
+            公司电话
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.CorpBank">
+            <summary>
+            开户行
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.CorpBankAccount">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.PostAddr">
+            <summary>
+            发票邮寄地址
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.Contact">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.FapiaoAndPostInfo.ContactPhone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.ITransactionBillManager.GetTransactionBillInfo(LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto)">
+            <summary>
+            查询对账单列表
+            </summary>
+            <param name="request"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.ITransactionBillManager.TimingGenerateClinicTransactionBills">
+             <summary>
+            诊所 定时生成诊所的对账单
+             </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.ITransactionBillManager.AbortTransactionBillAsync(System.String)">
+            <summary>
+            作废对账单
+            </summary>
+            <param name="transactionCode">对账单号</param>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.ITransactionBillManager.CheckTransactionBillAsync(System.String,System.String)">
+            <summary>
+            核对对账单
+            </summary>
+            <param name="transactionCode">对账单号</param>
+            <param name="shopId">诊所id</param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.ITransactionBillManager.ApplySettleTransactionBillAsync(System.Collections.Generic.List{System.String},LinkedX.OrderService.Enums.SettleBillSettleTypeEnum,System.String,System.String,System.String,System.String)">
+            <summary>
+            申请结算
+            </summary>
+            <param name="transactionCodeList">对账单号的集合</param>
+            <param name="settleType">结算方式</param>
+            <param name="shopId">诊所id</param>
+            <param name="accountName">对公账户账号名称</param>
+            <param name="bankName">对公账户开户行</param>
+            <param name="accountCode">对公账户银行账号</param>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.TransactionBill.SettleBill">
+            <summary>
+            结算单实体
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.SettleAmount">
+             <summary>
+            结算金额
+             </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.SettleType">
+            <summary>
+            结算方式（1-现金结算，2-兑换现金券 ）
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.AccountName">
+            <summary>
+            对公账户账号名称
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.BankName">
+            <summary>
+            对公账户开户行
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.AccountCode">
+            <summary>
+            对公账户银行账号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.SettleTime">
+            <summary>
+            结算时间
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.SettleUserId">
+            <summary>
+            结算人
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.Status">
+            <summary>
+            结算状态
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.SettleBill.FapiaoAndPostInfo">
+            <summary>
+            发票和邮寄信息
+            </summary>
+        </member>
+        <member name="T:LinkedX.OrderService.TransactionBill.TransactionBill">
+            <summary>
+            对账单实体
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.TransactionBillCode">
+            <summary>
+            对账单号
+            </summary>     
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.ChannelCode">
+            <summary>
+            渠道code
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.ShopId">
+            <summary>
+            诊所id
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.Brokerage">
+            <summary>
+            佣金(针对三方)
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.PurchaseAmount">
+            <summary>
+            总的采购价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.SaleAmout">
+            <summary>
+            总的销售金额
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.SettlleType">
+            <summary>
+            结算模式
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.PayCode">
+            <summary>
+            付款流水号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.Period">
+             <summary>
+            对账周期 
+             </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.TransactionBillType">
+            <summary>
+            账单类型 1-诊所 2-三方
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.SettleBillId">
+            <summary>
+            结算单id
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.Status">
+             <summary>
+            对账单状态 1-待核对 2-待结算 3-已结算 4-已作废 5-已核对
+             </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.CheckUserId">
+            <summary>
+            核对人
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBill.CheckTime">
+            <summary>
+            核对时间
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBill.ActiveStateMachine">
+            <summary>
+            激活状态机
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBill.OnTransitionAction(Stateless.StateMachine{LinkedX.OrderService.Enums.TransactionBillStatusEnum,LinkedX.OrderService.Enums.TransactionBillOpeation}.Transition)">
+            <summary>
+            当有装填发生变化时触发
+            </summary>
+            <param name="arg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBill.AbortAsync">
+            <summary>
+            作废对账单
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBill.ShopCheckAsync">
+            <summary>
+            诊所核对对账单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LinkedX.OrderService.TransactionBill.TransactionBillDetail">
+            <summary>
+            对账单明细
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.TransactionBillId">
+            <summary>
+            对账单号
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.ChannelCode">
+            <summary>
+            渠道code
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.OrderId">
+            <summary>
+            订单id
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.SalePrice">
+             <summary>
+            销售价
+             </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.SaleAmount">
+            <summary>
+            销售金额
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.PurchasePrice">
+            <summary>
+            领健采购价
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.PurchaseAmount">
+            <summary>
+            领健采购金额
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.PurchaseCount">
+            <summary>
+            购买数量
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.ChannelBrokeragePercent">
+            <summary>
+            渠道抽佣比例
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.LcBrokeragePercent">
+            <summary>
+            领健抽佣比例
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.LcBrokerage">
+            <summary>
+            领健佣金
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.SpuId">
+            <summary>
+            商品spuid
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.SpuName">
+             <summary>
+            商品spu名称
+             </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.SkuId">
+            <summary>
+            商品skuid
+            </summary>
+        </member>
+        <member name="P:LinkedX.OrderService.TransactionBill.TransactionBillDetail.SkuName">
+            <summary>
+            商品sku名称
+            </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.GetTransactionBillInfo(LinkedX.OrderService.TransactionBill.Dtos.TransactionBillInputDto)">
+            <summary>
+            获取对账单列表
+            </summary>
+            <param name="request"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.TimingGenerateClinicTransactionBills">
+             <summary>
+            诊所 定时生成诊所的对账单
+             </summary>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.AbortTransactionBillAsync(System.String)">
+            <summary>
+            作废对账单
+            </summary>
+            <param name="transactionCode">对账单号</param>
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.CheckTransactionBillAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:LinkedX.OrderService.TransactionBill.TransactionBillManager.ApplySettleTransactionBillAsync(System.Collections.Generic.List{System.String},LinkedX.OrderService.Enums.SettleBillSettleTypeEnum,System.String,System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:LinkedX.OrderService.Web.WebContentDirectoryFinder">
+            <summary>
+            This class is used to find root path of the web project in;
+            unit tests (to find views) and entity framework core command line commands (to find conn string).
+            </summary>
+        </member>
+    </members>
+</doc>
