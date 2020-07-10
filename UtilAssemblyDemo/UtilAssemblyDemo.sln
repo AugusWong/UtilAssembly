@@ -12,9 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{12DA71B5-315F-46AA-9EEF-02B3BC1F87A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{5C667224-182C-4AA5-8B0E-139FC33E4E51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{5C667224-182C-4AA5-8B0E-139FC33E4E51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "测试读取解析xml", "测试\测试读取解析xml.csproj", "{F3F55DAD-0431-4964-BEA6-1109ABB4043B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "想要解析与更新mysql迁移时的数据库备注", "想要解析与更新mysql迁移时的数据库备注\想要解析与更新mysql迁移时的数据库备注.csproj", "{94779ABB-AE8F-4763-930F-22E3C369E895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{F3F55DAD-0431-4964-BEA6-1109ABB4043B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3F55DAD-0431-4964-BEA6-1109ABB4043B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3F55DAD-0431-4964-BEA6-1109ABB4043B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94779ABB-AE8F-4763-930F-22E3C369E895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94779ABB-AE8F-4763-930F-22E3C369E895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94779ABB-AE8F-4763-930F-22E3C369E895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94779ABB-AE8F-4763-930F-22E3C369E895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

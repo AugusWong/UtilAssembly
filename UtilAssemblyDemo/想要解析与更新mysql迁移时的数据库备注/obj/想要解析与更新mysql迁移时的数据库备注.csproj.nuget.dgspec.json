@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\Utils\\Utils.csproj": {}
+    "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\想要解析与更新mysql迁移时的数据库备注\\想要解析与更新mysql迁移时的数据库备注.csproj": {}
   },
   "projects": {
-    "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\Utils\\Utils.csproj": {
+    "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\想要解析与更新mysql迁移时的数据库备注\\想要解析与更新mysql迁移时的数据库备注.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\Utils\\Utils.csproj",
-        "projectName": "Utils",
-        "projectPath": "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\Utils\\Utils.csproj",
+        "projectUniqueName": "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\想要解析与更新mysql迁移时的数据库备注\\想要解析与更新mysql迁移时的数据库备注.csproj",
+        "projectName": "想要解析与更新mysql迁移时的数据库备注",
+        "projectPath": "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\想要解析与更新mysql迁移时的数据库备注\\想要解析与更新mysql迁移时的数据库备注.csproj",
         "packagesPath": "C:\\Users\\will\\.nuget\\packages\\",
-        "outputPath": "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\Utils\\obj\\",
+        "outputPath": "D:\\MyDev\\UtilAssembly\\UtilAssemblyDemo\\想要解析与更新mysql迁移时的数据库备注\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
